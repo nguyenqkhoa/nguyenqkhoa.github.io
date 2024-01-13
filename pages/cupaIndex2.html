@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--CSS-->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #f2f2f2;
+            padding: 15px;
+            height: 100vh;
+        }
+
+        main {
+            float: left;
+            width: 80%;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .art-box {
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .art-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .art-box img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 20px;
+            transform: transform 0.3s;
+        }
+
+        .art-box img:hover {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            flex-direction: row; 
+        }
+
+        .overlay img {
+            max-width: 50%;
+            max-height: auto;
+            margin-right: 20px;
+        }
+
+        .text-container {
+            max-width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff; 
+            border-radius: 8px; 
+        }
+
+        .text-container p {
+            color: #0077cc;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .lightbox-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .lightbox-image {
+            max-width: 65%;
+            max-height: 65%;
+        }
+
+        footer {
+            clear: both;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<!--HTML-->
+<body>
+
+    <header>
+        <h1>Cupa is very Poggers</h1>
+    </header>
+    
+
+    <main>
+        <div class="art-box">
+            <div class="art-item" 
+            onclick="openLightbox('KukiCupa.jpg', 
+            'Twitter: <a href=\'https://twitter.com/kuki_tan\' target=\'_blank\'>https://twitter.com/kuki_tan\</a><br>Carrd.co: <a href=\'https://kukitan.carrd.co\' target=\'_blank\'> https://kukitan.carrd.co\</a>')">
+                <img src="KukiCupa.jpg" alt="Cupa by Kuki">
+                <div class="overlay" onclick="event.stopPropagation()">
+                    <img src="KukiCupa.jpg" alt="Enlarged Image">
+                </div>
+            </div>
+            <div class="art-item" onclick="openLightbox('Armor_Cupa.png',
+            'Twitter: <a href=\'https://twitter.com/cielle_amour\' target=\'_blank\'>https://twitter.com/cielle_amour\</a><br>Website: <a href=\'https://hyeinjenkang.wixsite.com/amour\' target=\'_blank\'> https://hyeinjenkang.wixsite.com/amour\</a>')">
+                <img src="Armor_Cupa.png" alt="Cupa by Amor">
+                <div class="overlay" onclick="event.stopPropagation()">
+                    <img src="Armor_Cupa.png" alt="Enlarged Image">
+                </div>
+            </div>
+            <div class="art-item" onclick="openLightbox('SailorYonDoubleCupaFULL.png',
+            'Twitter: <a href=\'https://twitter.com/Sailor_Yon\' target=\'_blank\'>https://twitter.com/Sailor_Yon\</a><br>Carrd.co: <a href=\'https://sailoryon.carrd.co\' target=\'_blank\'> https://sailoryon.carrd.co\</a>')">
+                <img src="SailorYonDoubleCupaFULL.png" alt="Cupa by SailorYon">
+                <div class="overlay" onclick="event.stopPropagation()">
+                    <img src="SailorYonDoubleCupaFULL.png" alt="Enlarged Image">
+                </div>
+            </div>
+            <div class="art-item" onclick="openLightbox('DestinyplayerChargedCupa.jpg',
+            'Twitter: <a href=\'https://twitter.com/Destinyplayer1\' target=\'_blank\'>https://twitter.com/Destinyplayer1\</a><br>Pixiv: <a href=\'https://www.pixiv.net/en/users/11396985\' target=\'_blank\'> https://www.pixiv.net/en/users/11396985\</a>')">
+                <img src="DestinyplayerChargedCupa.jpg" alt="Cupa by Destinyplayer1">
+                <div class="overlay" onclick="event.stopPropagation()">
+                    <img src="DestinyplayerChargedCupa.jpg" alt="Enlarged Image">
+                </div>
+            </div>
+            <div class="art-item" onclick="openLightbox('CalDoubleCupa.jpg',
+            'Website: <a href=\'https://comfycal.com\' target=\'_blank\'>https://comfycal.com\</a>')">
+                <img src="CalDoubleCupa.jpg" alt="Cupa by Cal">
+                <div class="overlay" onclick="event.stopPropagation()">
+                    <img src="CalDoubleCupa.jpg" alt="Enlarged Image">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="lightbox-container" id="lightboxContainer" onclick="closeLightbox(Event)">
+        <img src="" alt="Enlarged Image" class="lightbox-image">
+        <div class="text-container" id="textContainer"></div>
+    </div>
+<!--Javascript-->
+    <script>
+    function openLightbox(imageSrc, textContent) {
+        var lightbox = document.getElementById('lightboxContainer');
+        var lightboxImage = document.querySelector('.lightbox-image');
+        var textContainer = document.getElementById('textContainer');
+
+        lightbox.style.display = 'flex';
+        lightbox.classList.add('blurred-background');
+        lightboxImage.src = imageSrc;
+        textContainer.innerHTML = textContent;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var lightbox = document.getElementById('lightboxContainer');
+        var lightboxImage = document.querySelector('.lightbox-image');
+        var textContainer = document.getElementById('textContainer');
+
+        lightbox.addEventListener('click', function (event) {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+                lightbox.classList.remove('blurred-background');
+                textContainer.innerHTML = '';
+            }
+        });
+
+        lightboxImage.addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
+
+        textContainer.addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
+    });
+
+    
+    </script>
+
+    <footer>
+        <p>Wow Cupa very cool</p>
+        <a href="https://nguyenqkhoa.github.io/">
+            <button><- Go Back</button>
+        </a>
+    </footer>
+
+</body>
+</html>
