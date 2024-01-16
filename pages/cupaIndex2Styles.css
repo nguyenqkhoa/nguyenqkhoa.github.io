@@ -69,6 +69,7 @@ main {
     align-items: center;
     z-index: 2;
     flex-direction: row; 
+    overflow: auto;
 }
 
 .overlay img {
@@ -78,10 +79,11 @@ main {
 }
 
 .text-container {
-    max-width: 50%;
+    max-width: calc(50% - 20px);
     padding: 20px;
     box-sizing: border-box;
     background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(145, 144, 144, 0.1);
     border-radius: 8px; 
 }
 
@@ -102,11 +104,39 @@ main {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    overflow: auto;
 }
 
 .lightbox-image {
     max-width: 65%;
     max-height: 65%;
+}
+
+.image-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container img{
+    max-width: calc(45% - 10px); 
+    max-height: auto;
+}
+
+#xButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #490707;
+    background: none;
+    background-color: #ddd;
+    border: none;
+    padding: 0;
+}
+
+#xButton:hover{
+    background-color: #dddddd83;
 }
 
 footer {
