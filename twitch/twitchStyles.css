@@ -1,0 +1,14 @@
+
+footer {
+    clear: both;
+    text-align: center;
+    padding: 10px;
+    background-color: #0c0b0b;
+    color: #fff;
+    }
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #7d22b1;
+    }
